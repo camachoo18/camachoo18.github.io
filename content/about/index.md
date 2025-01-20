@@ -1,9 +1,9 @@
 ---
 layout: layouts/base.njk
 eleventyNavigation:
-  key: About Me
+  key: Sobre mí
   order: 3
 ---
 # About Me
 
-I am a person that writes stuff.
+Una persona bastante random :D
