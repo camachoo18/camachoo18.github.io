@@ -3,26 +3,33 @@ layout: layouts/home.njk
 eleventyNavigation:
   key: Inicio
   order: 1
-numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+<section class="welcome-section">
+  <h1>Hola, soy Estiven Camacho</h1>
+  <p>Full-Stack Developer & Cybersecurity Specialist enfocado en seguridad defensiva, hardening de sistemas y automatización.</p>
+</section>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the blog</a>.</p>
-{% endif %}
+<hr>
 
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+<section class="projects-grid">
+  <h2>📁 Proyectos Destacados</h2>
+  
+  <div class="project-card">
+    <h3>TELEMETRIA-TFG</h3>
+    <p>Sistema enfocado en la monitorización, telemetría y análisis de métricas con un enfoque en seguridad defensiva.</p>
+    <span class="tech-tag">JavaScript</span>
+  </div>
+
+  <div class="project-card">
+    <h3>Chat-MultiUser-with-sockets-express</h3>
+    <p>Aplicación de chat multiusuario en tiempo real utilizando WebSockets para la gestión de comunicación bidireccional concurrente.</p>
+    <span class="tech-tag">HTML</span> <span class="tech-tag">JavaScript</span>
+  </div>
+
+  <div class="project-card">
+    <h3>Agendify</h3>
+    <p>Gestor de flujos de trabajo y automatización para la optimización de tareas diarias.</p>
+    <span class="tech-tag">JavaScript</span>
+  </div>
+</section>
