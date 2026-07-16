@@ -93,6 +93,7 @@ function renderAbout() {
 
     paragraphsContainer.innerHTML = '';
 
+    // Inyectar párrafos narrativos
     portfolioData.about.paragraphs.forEach(text => {
         const p = document.createElement('p');
         p.style.cssText = "color: var(--text-grey); font-size: 1.05rem; line-height: 1.6; text-align: justify;";
@@ -102,6 +103,15 @@ function renderAbout() {
         
         paragraphsContainer.appendChild(p);
     });
+
+    // Crear e inyectar el botón de descarga del CV en formato PDF
+    const downloadBtn = document.createElement('a');
+    downloadBtn.href = 'public/docs/CV.pdf'; 
+    downloadBtn.download = 'CV_Estiven_Camacho.pdf'; 
+    downloadBtn.className = 'cv-download-btn';
+    downloadBtn.innerHTML = 'DESCARGAR CV (PDF) <span class="lime-dot">.</span>';
+    
+    paragraphsContainer.appendChild(downloadBtn);
 
     const styleToken = document.createElement('style');
     styleToken.innerHTML = ".about-text-block strong { color: var(--text-white); font-weight: 700; }";

@@ -189,7 +189,7 @@ body {
 }
 
 .project-card::before {
-    content: "</>";
+    content: "🛡️";
     position: absolute;
     top: 40%; left: 50%;
     transform: translate(-50%, -50%);
@@ -443,4 +443,41 @@ body {
         flex-direction: column;
         width: 100%;
     }
+    /*BOTON DE DESCARGA DEL CV*/
+    .cv-download-btn {
+    display: inline-block;
+    align-self: flex-start; /* Evita que el botón se estire a lo ancho de la pantalla */
+    margin-top: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    
+    /* Colores invertidos: fondo verde lima y texto negro profundo */
+    background-color: var(--accent-lime);
+    color: var(--bg-black);
+    padding: 1rem 2.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-lime);
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.cv-download-btn:hover {
+    /* Efecto transparente con borde brillante al pasar el cursor */
+    background-color: transparent;
+    color: var(--accent-lime);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(204, 255, 0, 0.2);
+}
+
+.cv-download-btn .lime-dot {
+    transition: var(--transition-fast);
+}
+
+.cv-download-btn:hover .lime-dot {
+    color: var(--text-white); /* El punto neón muta a blanco en el hover */
+}
 }
