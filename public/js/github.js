@@ -4,7 +4,7 @@ import { portfolioData } from './config.js';
  * Conecta con la API de GitHub, recupera mis repositorios 
  * y los renderiza dinámicamente en la interfaz.
  */
-export async function renderGitHubProjects() {
+export async function renderGitHubProjects(language = 'es') {
     const container = document.getElementById('github-projects');
     if (!container) return;
 
@@ -31,7 +31,7 @@ const response = await fetch(`https://api.github.com/users/${username}/repos?sor
         });
 
         if (filteredRepos.length === 0) {
-            container.innerHTML = `<p class="loading">No se encontraron repositorios públicos propios.</p>`;
+            container.innerHTML = `<p class="loading">${language === 'en' ? 'No public repositories found.' : 'No se encontraron repositorios públicos propios.'}</p>`;
             return;
         }
 
@@ -51,12 +51,12 @@ filteredRepos.forEach(repo => {
                     <div>
                         <h3>${repo.name}</h3>
                         <p style="color: var(--text-grey); font-size: 0.9rem; line-height: 1.4; margin-top: 1rem;">
-                            ${repo.description || 'Proyecto técnico enfocado en desarrollo y seguridad informática.'}
+                            ${repo.description || (language === 'en' ? 'Technical project focused on development and cybersecurity.' : 'Proyecto técnico enfocado en desarrollo y seguridad informática.')}
                         </p>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.8rem;">
                         <span style="color: var(--text-white); font-weight: 700;">${repo.language || 'Docs'}</span>
-                        <a href="${repo.html_url}" target="_blank" style="color: var(--accent-lime); text-decoration: none; font-weight: 700;">CÓDIGO FUENTE →</a>
+                        <a href="${repo.html_url}" target="_blank" style="color: var(--accent-lime); text-decoration: none; font-weight: 700;">${language === 'en' ? 'SOURCE CODE' : 'CÓDIGO FUENTE'} →</a>
                     </div>
                 </div>
             `;
@@ -68,7 +68,7 @@ filteredRepos.forEach(repo => {
         console.error('Error fetching GitHub repos:', error);
         container.innerHTML = `
             <p class="loading" style="color: #f87171;">
-                [!] Error al conectar con la API de GitHub. Revisa la consola o tu conexión.
+                [!] ${language === 'en' ? 'Could not connect to the GitHub API. Check the console or your connection.' : 'Error al conectar con la API de GitHub. Revisa la consola o tu conexión.'}
             </p>
         `;
     }

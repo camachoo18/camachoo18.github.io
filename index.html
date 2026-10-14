@@ -13,12 +13,17 @@
     <header class="navbar">
             <div class="logo">EC<span class="lime-dot">.</span></div>
             <nav class="nav-menu">
-                <a href="#home" class="active">INICIO</a>
-                <a href="#projects">PROYECTOS</a>
-                <a href="#about">SOBRE MÍ</a>
+                <a href="#home" class="active" data-i18n="nav.home">INICIO</a>
+                <a href="#projects" data-i18n="nav.projects">PROYECTOS</a>
+                <a href="#about" data-i18n="nav.about">SOBRE MÍ</a>
             </nav>
+            <button class="language-toggle" id="language-toggle" type="button" aria-label="Cambiar idioma">
+                <span class="language-option active">ES</span>
+                <span class="language-separator">/</span>
+                <span class="language-option">EN</span>
+            </button>
             
-            <button class="menu-toggle" id="menu-toggle" aria-label="Alternar menú">
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Alternar menú">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -31,7 +36,7 @@
             <div class="hero-grid">
                 <div class="hero-text">
                     <p class="hero-subtitle">ESTIVEN JESÚS CAMACHO ARMIJOS</p>
-                    <h1 class="display-title">FULL-STACK<br>DEVELOPER & CIBERSECURITY</h1>
+                    <h1 class="display-title" data-i18n="hero.title">FULL-STACK<br>DEVELOPER & CIBERSECURITY</h1>
                 </div>
                 <div class="hero-image-wrapper">
                     <div class="image-border-back"></div>
@@ -42,37 +47,37 @@
             <div class="dashboard-preview">
                 <div class="meta-panel">
                     <div class="meta-item">
-                        <span class="meta-label">STATUS</span>
+                        <span class="meta-label" data-i18n="home.statusLabel">STATUS</span>
                         <span class="meta-value"><span class="status-dot"></span> <span id="home-status">Disponible</span></span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">UBICACIÓN</span>
+                        <span class="meta-label" data-i18n="home.locationLabel">UBICACIÓN</span>
                         <span class="meta-value" id="home-location">Granada, España</span>
                     </div>
                     <div class="meta-item">
-                        <span class="meta-label">ENFOQUE</span>
+                        <span class="meta-label" data-i18n="home.focusLabel">ENFOQUE</span>
                         <span class="meta-value" id="home-focus">Desarrollo de Software Seguro: Detección, Prevención y Mitigación de Vulnerabilidades</span>
                     </div>
                 </div>
                 <div class="stack-panel">
-                    <p class="sidebar-label">Tecnologías con las que trabajo</p>
+                    <p class="sidebar-label" data-i18n="home.technologies">Tecnologías con las que trabajo</p>
                     <div id="home-stack-tags" class="tags-wrapper"></div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="view-section hidden">
-            <h2 class="section-title">PROYECTOS<span class="lime-dot">.</span></h2>
+            <h2 class="section-title"><span data-i18n="nav.projects">PROYECTOS</span><span class="lime-dot">.</span></h2>
             <div id="github-projects" class="interactive-projects-grid">
                 <div class="loading">Conectando con GitHub API...</div>
             </div>
         </section>
 
         <section id="about" class="view-section hidden">
-            <h2 class="section-title">SOBRE MÍ<span class="lime-dot">.</span></h2>
+            <h2 class="section-title"><span data-i18n="nav.about">SOBRE MÍ</span><span class="lime-dot">.</span></h2>
             
             <div class="education-wrapper">
-                <h3 class="sub-section-title">🎓 Formación Destacada</h3>
+                <h3 class="sub-section-title" data-i18n="about.education">🎓 Formación Destacada</h3>
                 <div id="education-list"></div>
             </div>
         </section>
@@ -80,7 +85,7 @@
     </main>
 
     <footer class="global-cta">
-        <h2>¿Hablamos?</h2>
+        <h2 data-i18n="footer.title">¿Hablamos?</h2>
         <div class="social-links">
             <a id="link-email" href="#" target="_blank" class="social-btn">Email</a>
             <a id="link-github" href="#" target="_blank" class="social-btn">GitHub</a>

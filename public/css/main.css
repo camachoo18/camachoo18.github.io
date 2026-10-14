@@ -68,6 +68,30 @@ body {
     color: var(--accent-lime);
 }
 
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--text-grey);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.language-toggle:hover, .language-toggle:focus-visible {
+    border-color: var(--accent-lime);
+    color: var(--text-white);
+}
+
+.language-option.active { color: var(--accent-lime); }
+.language-separator { color: var(--text-grey); }
+
 /* Contenedor de Vistas */
 .content-wrapper {
     margin-top: 90px;
@@ -294,6 +318,11 @@ body {
     .navbar {
         padding: 0 2rem;
         height: 80px;
+    }
+
+    .language-toggle {
+        margin-left: auto;
+        margin-right: 1rem;
     }
     
     /* Mantener que el logo flote siempre por encima del menú abierto */
