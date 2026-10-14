@@ -69,12 +69,14 @@ body {
 }
 
 .language-toggle {
+    appearance: none;
+    -webkit-appearance: none;
     display: flex;
     align-items: center;
     gap: 0.35rem;
     padding: 0.5rem 0.75rem;
     color: var(--text-grey);
-    background: transparent;
+    background-color: transparent;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-family: var(--font-mono);
